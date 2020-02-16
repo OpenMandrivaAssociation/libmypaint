@@ -9,8 +9,8 @@
 %define         gmajor          1.3
 
 Name:           libmypaint
-Version:        1.3.0
-Release:        2
+Version:        1.5.0
+Release:        1
 Summary:        System libraries based on Mypaint
 Group:          System/Libraries
 License:        GPLv2+
