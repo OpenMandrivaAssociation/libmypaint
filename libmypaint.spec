@@ -1,7 +1,7 @@
 %define	_disable_rebuild_configure 1
 
 %define         api             1.5
-%define         major           0
+%define         major           1
 %define         libname         %mklibname mypaint %{api} %{major}
 %define         libname_gegl    %mklibname mypaint-gegl %{major}
 %define         libdevelname    %mklibname -d mypaint
