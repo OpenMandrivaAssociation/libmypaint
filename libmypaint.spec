@@ -28,6 +28,7 @@ BuildRequires:  pkgconfig(lcms2)
 BuildRequires:  pkgconfig(libpng)
 BuildRequires:  pkgconfig(gobject-introspection-1.0)
 BuildRequires:  pkgconfig(glib-2.0)
+BuildRequires:  typelib(Gegl)
 
 %description
 %{summary}.
