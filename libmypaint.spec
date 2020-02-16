@@ -1,12 +1,12 @@
 %define	_disable_rebuild_configure 1
 
-%define         api             1.3
+%define         api             1.5
 %define         major           0
 %define         libname         %mklibname mypaint %{api} %{major}
 %define         libname_gegl    %mklibname mypaint-gegl %{major}
 %define         libdevelname    %mklibname -d mypaint
 
-%define         gmajor          1.3
+%define         gmajor          1.5
 
 Name:           libmypaint
 Version:        1.5.0
@@ -22,10 +22,12 @@ BuildRequires:  perl(XML::Parser)
 BuildRequires:  intltool
 BuildRequires:  libgomp-devel
 BuildRequires:  pkgconfig(gegl-0.4)
+BuildRequires:  pkgconfig(babl)
 BuildRequires:  pkgconfig(json-c)
 BuildRequires:  pkgconfig(lcms2)
 BuildRequires:  pkgconfig(libpng)
 BuildRequires:  pkgconfig(gobject-introspection-1.0)
+BuildRequires:  pkgconfig(glib-2.0)
 
 %description
 %{summary}.
@@ -79,7 +81,7 @@ Requires:       %{libname_gegl} = %{version}-%{release}
 %build
 sed -i 's!gegl-0.3!gegl-0.4!' configure.ac configure gegl/Makefile* gegl/libmypaint-gegl.pc*
 sed -i 's!Gegl-0.3!Gegl-0.4!' gegl/Makefile*
-%configure2_5x --enable-gegl --enable-openmp --enable-introspection=no
+%configure --enable-gegl --enable-openmp --enable-introspection=yes
 %make
 
 
