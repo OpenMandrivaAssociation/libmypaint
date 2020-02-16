@@ -101,7 +101,7 @@ find %{buildroot}%{_libdir} -name '*.la' -delete
 
 %files -n %{libname_gegl}
 %doc README.md
-%{_libdir}/libmypaint-gegl.so.%{major}*
+#{_libdir}/libmypaint-gegl.so.%{major}*
 
 %files -n %{libdevelname}
 %{_includedir}/libmypaint-gegl/
