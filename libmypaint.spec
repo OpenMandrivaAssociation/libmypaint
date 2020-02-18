@@ -83,7 +83,7 @@ GObject Introspection interface description for MyPaintGegl.
 %package -n %{libdevelname}
 Summary:        Development files for libmypaint
 Group:          Development/Other
-#Provides:       %{name}-devel = %{version}-%{release}
+Provides:       %{name}-devel = %{version}-%{release}
 Requires:       %{libname} = %{version}-%{release}
 Requires:       %{libname_gegl} = %{version}-%{release}
 Requires:       %{girname} = %{version}-%{release}
