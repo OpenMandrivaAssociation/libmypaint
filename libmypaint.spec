@@ -40,7 +40,6 @@ BuildRequires:  typelib(Gegl)
 Summary:        Internationalization and locale data for libmypaint
 Group:          System/Libraries
 BuildArch:      noarch
-Conflicts:      mypaint <= 1.2.1
 
 %description -n %{name}-i18n
 %{summary}.
@@ -49,7 +48,6 @@ Conflicts:      mypaint <= 1.2.1
 %package -n %{libname}
 Summary:        System libraries based on Mypaint
 Group:          System/Libraries
-Obsoletes:      %{_lib}mypaint0 < 1.3.0-3
 
 %description -n %{libname}
 This is an independent release of libmypaint, the library associated
@@ -58,7 +56,6 @@ with Mypaint, as a separate module.
 %package -n %{libname_gegl}
 Summary:        System libraries based on Mypaint
 Group:          System/Libraries
-Conflicts:      %{_lib}mypaint0 < 1.3.0-2
 
 %description -n %{libname_gegl}
 This is an independent release of libmypaint, the library associated
@@ -88,6 +85,7 @@ Requires:       %{libname} = %{version}-%{release}
 Requires:       %{libname_gegl} = %{version}-%{release}
 Requires:       %{girname} = %{version}-%{release}
 Requires:       %{girname_gegl} = %{version}-%{release}
+Requires:       pkgconfig
 
 %description -n %{libdevelname}
 %{summary}.
