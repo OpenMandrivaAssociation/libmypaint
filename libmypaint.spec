@@ -5,6 +5,8 @@
 %define         libname         %mklibname mypaint %{api} %{major}
 %define         libname_gegl    %mklibname mypaint-gegl %{major}
 %define         libdevelname    %mklibname -d mypaint
+%define         girname         %mklibname mypaint-gir %{gmajor}
+%define         girname_gegl    %mklibname mypaintgegl-gir %{gmajor}
 %define         geglapi         0
 %define         gmajor          1.5
 
@@ -62,6 +64,22 @@ Conflicts:      %{_lib}mypaint0 < 1.3.0-2
 This is an independent release of libmypaint, the library associated
 with Mypaint, as a separate module.
 
+%package -n %{girname}
+Summary:        GObject Introspection interface description for MyPaint
+Group:          System/Libraries
+Requires:       %{libname} = %{version}-%{release}
+
+%description -n %{girname}
+GObject Introspection interface description for MyPaint.
+
+%package -n %{girname_gegl}
+Summary:        GObject Introspection interface description for MyPaintGegl
+Group:          System/Libraries
+Requires:       %{libname_gegl} = %{version}-%{release}
+
+%description -n %{girname_gegl}
+GObject Introspection interface description for MyPaintGegl.
+
 %package -n %{libdevelname}
 Summary:        Development files for libmypaint
 Group:          Development/Other
@@ -74,7 +92,6 @@ Requires:       %{libname_gegl} = %{version}-%{release}
 
 %prep
 %setup -q
-
 
 %build
 sed -i 's!gegl-0.3!gegl-0.4!' configure.ac configure gegl/Makefile* gegl/libmypaint-gegl.pc*
