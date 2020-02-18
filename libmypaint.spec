@@ -5,7 +5,7 @@
 %define         libname         %mklibname mypaint %{api} %{major}
 %define         libname_gegl    %mklibname mypaint-gegl %{major}
 %define         libdevelname    %mklibname -d mypaint
-
+%define         geglapi         0
 %define         gmajor          1.5
 
 Name:           libmypaint
@@ -72,9 +72,6 @@ Requires:       %{libname_gegl} = %{version}-%{release}
 %description -n %{libdevelname}
 %{summary}.
 
-
-
-
 %prep
 %setup -q
 
@@ -84,7 +81,6 @@ sed -i 's!gegl-0.3!gegl-0.4!' configure.ac configure gegl/Makefile* gegl/libmypa
 sed -i 's!Gegl-0.3!Gegl-0.4!' gegl/Makefile*
 %configure --enable-gegl --enable-openmp --enable-introspection=yes
 %make
-
 
 %install
 %makeinstall_std
@@ -101,7 +97,13 @@ find %{buildroot}%{_libdir} -name '*.la' -delete
 
 %files -n %{libname_gegl}
 %doc README.md
-#{_libdir}/libmypaint-gegl.so.%{major}*
+%{_libdir}/libmypaint-gegl.so.%{geglapi}*
+
+%files -n %{girname}
+%{_libdir}/girepository-1.0/MyPaint-%{gmajor}.typelib
+
+%files -n %{girname_gegl}
+%{_libdir}/girepository-1.0/MyPaintGegl-%{gmajor}.typelib
 
 %files -n %{libdevelname}
 %{_includedir}/libmypaint-gegl/
