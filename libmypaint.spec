@@ -80,16 +80,15 @@ Requires:       %{libname_gegl} = %{version}-%{release}
 sed -i 's!gegl-0.3!gegl-0.4!' configure.ac configure gegl/Makefile* gegl/libmypaint-gegl.pc*
 sed -i 's!Gegl-0.3!Gegl-0.4!' gegl/Makefile*
 %configure --enable-gegl --enable-openmp --enable-introspection=yes
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %find_lang %{name} --all-name
 find %{buildroot}%{_libdir} -name '*.la' -delete
 
 %files -n %{name}-i18n -f %{name}.lang
-
 
 %files -n %{libname}
 %doc README.md
@@ -111,4 +110,5 @@ find %{buildroot}%{_libdir} -name '*.la' -delete
 %{_libdir}/libmypaint.so
 %{_libdir}/libmypaint-gegl.so
 %{_libdir}/pkgconfig/*.pc
-
+%{_datadir}/gir-1.0/MyPaint-%{gmajor}.gir
+%{_datadir}/gir-1.0/MyPaintGegl-%{gmajor}.gir
