@@ -86,6 +86,8 @@ Group:          Development/Other
 Provides:       %{name}-devel = %{version}-%{release}
 Requires:       %{libname} = %{version}-%{release}
 Requires:       %{libname_gegl} = %{version}-%{release}
+Requires:       %{girname} = %{version}-%{release}
+Requires:       %{girname_gegl} = %{version}-%{release}
 
 %description -n %{libdevelname}
 %{summary}.
