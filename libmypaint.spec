@@ -1,4 +1,6 @@
 %define	_disable_rebuild_configure 1
+# Speed up it a bit (angry)
+%global optflags %optflags -Ofast -ftree-vectorize -fopt-info-vec-optimized -funsafe-math-optimizations -funsafe-loop-optimizations
 
 %define         api             1.5
 %define         major           1
@@ -22,7 +24,8 @@ Source0:        https://github.com/mypaint/libmypaint/releases/download/v%{versi
 BuildRequires:  gettext
 BuildRequires:  perl(XML::Parser)
 BuildRequires:  intltool
-BuildRequires:  libgomp-devel
+# Should be profived by clang itself (llvm-devel)
+#BuildRequires:  gomp-devel
 BuildRequires:  pkgconfig(gegl-0.4)
 BuildRequires:  pkgconfig(babl)
 BuildRequires:  pkgconfig(json-c)
