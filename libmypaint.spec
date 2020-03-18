@@ -1,6 +1,6 @@
 %define	_disable_rebuild_configure 1
 # Speed up it a bit (angry)
-%global optflags %optflags -Ofast -ftree-vectorize -fopt-info-vec-optimized -funsafe-math-optimizations -funsafe-loop-optimizations
+%global optflags %optflags -Ofast
 
 %define         api             1.5
 %define         major           1
@@ -97,8 +97,8 @@ Requires:       pkgconfig
 %setup -q
 
 %build
-sed -i 's!gegl-0.3!gegl-0.4!' configure.ac configure gegl/Makefile* gegl/libmypaint-gegl.pc*
-sed -i 's!Gegl-0.3!Gegl-0.4!' gegl/Makefile*
+#sed -i 's!gegl-0.3!gegl-0.4!' configure.ac configure gegl/Makefile* gegl/libmypaint-gegl.pc*
+#sed -i 's!Gegl-0.3!Gegl-0.4!' gegl/Makefile*
 %configure --enable-gegl --enable-openmp --enable-introspection=yes
 %make_build
 
