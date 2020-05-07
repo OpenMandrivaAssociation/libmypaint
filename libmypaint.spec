@@ -10,7 +10,7 @@
 %define         girname         %mklibname mypaint-gir %{gmajor}
 %define         girname_gegl    %mklibname mypaintgegl-gir %{gmajor}
 %define         geglapi         0
-%define         gmajor          1.5
+%define         gmajor          1.6
 
 Name:           libmypaint
 Version:        1.6.0
