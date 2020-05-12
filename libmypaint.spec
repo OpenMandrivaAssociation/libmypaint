@@ -3,7 +3,7 @@
 %global optflags %optflags -Ofast
 
 %define         api             0.0
-%define         major           1
+%define         major           0
 %define         libname         %mklibname mypaint %{api} %{major}
 %define         libname_gegl    %mklibname mypaint-gegl %{major}
 %define         libdevelname    %mklibname -d mypaint
