@@ -10,7 +10,7 @@
 %define         girname         %mklibname mypaint-gir %{gmajor}
 %define         girname_gegl    %mklibname mypaintgegl-gir %{gmajor}
 %define         geglapi         0
-%define         gmajor          0.0
+%define         gmajor          1.6
 
 Name:           libmypaint
 Version:        1.6.1
@@ -112,17 +112,17 @@ find %{buildroot}%{_libdir} -name '*.la' -delete
 
 %files -n %{libname}
 %doc README.md
-#%{_libdir}/libmypaint-%{api}.so.%{major}*
+%{_libdir}/libmypaint.so.%{major}*
 
 %files -n %{libname_gegl}
 %doc README.md
-#%{_libdir}/libmypaint-gegl.so.%{geglapi}*
+%{_libdir}/libmypaint-gegl.so.%{geglapi}*
 
 %files -n %{girname}
-#%{_libdir}/girepository-1.0/MyPaint-%{gmajor}.typelib
+%{_libdir}/girepository-1.0/MyPaint-%{gmajor}.typelib
 
 %files -n %{girname_gegl}
-#%{_libdir}/girepository-1.0/MyPaintGegl-%{gmajor}.typelib
+%{_libdir}/girepository-1.0/MyPaintGegl-%{gmajor}.typelib
 
 %files -n %{libdevelname}
 %{_includedir}/libmypaint-gegl/
@@ -130,5 +130,5 @@ find %{buildroot}%{_libdir} -name '*.la' -delete
 %{_libdir}/libmypaint.so
 %{_libdir}/libmypaint-gegl.so
 %{_libdir}/pkgconfig/*.pc
-#%{_datadir}/gir-1.0/MyPaint-%{gmajor}.gir
-#%{_datadir}/gir-1.0/MyPaintGegl-%{gmajor}.gir
+%{_datadir}/gir-1.0/MyPaint-%{gmajor}.gir
+%{_datadir}/gir-1.0/MyPaintGegl-%{gmajor}.gir
