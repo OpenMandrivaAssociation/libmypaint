@@ -13,7 +13,7 @@
 %define         gmajor          1.6
 
 Name:           libmypaint
-Version:        1.6.0
+Version:        1.6.1
 Release:        1
 Summary:        System libraries based on Mypaint
 Group:          System/Libraries
