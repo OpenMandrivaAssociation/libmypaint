@@ -2,9 +2,9 @@
 # Speed up it a bit (angry)
 %global optflags %optflags -Ofast
 
-%define         api             1.6
-%define         major           1
-%define         libname         %mklibname mypaint %{api} %{major}
+%define         api             0.0
+%define         major           0
+%define         libname         %mklibname mypaint %{major}
 %define         libname_gegl    %mklibname mypaint-gegl %{major}
 %define         libdevelname    %mklibname -d mypaint
 %define         girname         %mklibname mypaint-gir %{gmajor}
@@ -97,8 +97,6 @@ Requires:       pkgconfig
 %setup -q
 
 %build
-#sed -i 's!gegl-0.3!gegl-0.4!' configure.ac configure gegl/Makefile* gegl/libmypaint-gegl.pc*
-#sed -i 's!Gegl-0.3!Gegl-0.4!' gegl/Makefile*
 %configure --enable-gegl --enable-openmp --enable-introspection=yes
 %make_build
 
@@ -112,7 +110,7 @@ find %{buildroot}%{_libdir} -name '*.la' -delete
 
 %files -n %{libname}
 %doc README.md
-%{_libdir}/libmypaint-%{api}.so.%{major}*
+%{_libdir}/libmypaint.so.%{major}*
 
 %files -n %{libname_gegl}
 %doc README.md
