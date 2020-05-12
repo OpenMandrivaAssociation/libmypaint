@@ -2,7 +2,7 @@
 # Speed up it a bit (angry)
 %global optflags %optflags -Ofast
 
-%define         api             1.6
+%define         api             0.0
 %define         major           1
 %define         libname         %mklibname mypaint %{api} %{major}
 %define         libname_gegl    %mklibname mypaint-gegl %{major}
@@ -10,7 +10,7 @@
 %define         girname         %mklibname mypaint-gir %{gmajor}
 %define         girname_gegl    %mklibname mypaintgegl-gir %{gmajor}
 %define         geglapi         0
-%define         gmajor          1.6
+%define         gmajor          0.0
 
 Name:           libmypaint
 Version:        1.6.1
