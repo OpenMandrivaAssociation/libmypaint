@@ -1,6 +1,6 @@
 %define	_disable_rebuild_configure 1
 # Speed up it a bit (angry)
-%global optflags %optflags -Ofast
+%global optflags %optflags -O3
 
 %define         api             0.0
 %define         major           0
@@ -94,7 +94,7 @@ Requires:       pkgconfig
 %{summary}.
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
 %configure --enable-gegl --enable-openmp --enable-introspection=yes
