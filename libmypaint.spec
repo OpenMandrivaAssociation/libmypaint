@@ -14,7 +14,7 @@
 
 Name:           libmypaint
 Version:        1.6.1
-Release:        1
+Release:        2
 Summary:        System libraries based on Mypaint
 Group:          System/Libraries
 License:        GPLv2+
@@ -27,7 +27,7 @@ BuildRequires:  intltool
 # Should be profived by clang itself (llvm-devel)
 #BuildRequires:  gomp-devel
 BuildRequires:  pkgconfig(gegl-0.4)
-BuildRequires:  pkgconfig(babl)
+BuildRequires:  pkgconfig(babl-0.1) >= 0.1.100
 BuildRequires:  pkgconfig(json-c)
 BuildRequires:  pkgconfig(lcms2)
 BuildRequires:  pkgconfig(libpng)
