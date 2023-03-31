@@ -14,7 +14,7 @@
 
 Name:           libmypaint
 Version:        1.6.1
-Release:        3
+Release:        4
 Summary:        System libraries based on Mypaint
 Group:          System/Libraries
 License:        GPLv2+
