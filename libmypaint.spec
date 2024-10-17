@@ -18,7 +18,7 @@ Release:        4
 Summary:        System libraries based on Mypaint
 Group:          System/Libraries
 License:        GPLv2+
-URL:            http://mypaint.org
+URL:            https://mypaint.org
 Source0:        https://github.com/mypaint/libmypaint/releases/download/v%{version}/%{name}-%{version}.tar.xz
 
 BuildRequires:  gettext
