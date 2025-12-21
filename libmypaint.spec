@@ -21,6 +21,11 @@ License:        GPLv2+
 URL:            https://mypaint.org
 Source0:        https://github.com/mypaint/libmypaint/releases/download/v%{version}/%{name}-%{version}.tar.xz
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:  gettext
 BuildRequires:  perl(XML::Parser)
 BuildRequires:  intltool
